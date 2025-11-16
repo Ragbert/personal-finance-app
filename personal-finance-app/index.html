@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Personal Finance — Login</title>
+	<!-- Tailwind CDN opcional para utilidades (no obligatorio) -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="brand">
+				<div class="logo">PF</div>
+				<div>
+					<h2>Personal Finance</h2>
+					<div class="muted small">Administra tus gastos e ingresos</div>
+				</div>
+			</div>
+			<div class="row">
+				<button id="theme-toggle" class="btn ghost small">Toggle tema</button>
+				<a class="btn" href="register.html">Crear cuenta</a>
+			</div>
+		</div>
+
+		<div class="card" style="max-width:520px;margin:auto">
+			<h3>Iniciar sesión</h3>
+			<form id="login-form" class="form" style="margin-top:12px">
+				<input class="input" name="email" type="email" placeholder="Correo electrónico" required />
+				<input class="input" name="password" type="password" placeholder="Contraseña" required />
+				<div class="row">
+					<button class="btn" type="submit">Iniciar sesión</button>
+					<a class="btn ghost" href="register.html">Registrarse</a>
+				</div>
+			</form>
+			<div style="margin-top:12px" class="muted small">Tip: prueba registrarte con un correo y luego iniciar sesión.</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/storage.js"></script>
+	<script src="assets/js/auth.js"></script>
+	<script src="assets/js/ui.js"></script>
+</body>
+</html>

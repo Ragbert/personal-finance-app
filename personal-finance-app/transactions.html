@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Personal Finance — Transacciones</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+	<body data-protected="true">
+	<div class="container">
+		<div class="header">
+			<div class="brand">
+				<div class="logo">PF</div>
+				<div>
+					<h2>Transacciones</h2>
+					<div class="muted small">CRUD, filtros y orden</div>
+				</div>
+			</div>
+			<div class="row">
+				<a class="btn" href="dashboard.html">Volver</a>
+				<a class="btn" href="add-transaction.html">+ Nueva</a>
+				<a id="logout-btn" class="btn ghost" href="#">Cerrar sesión</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<form id="filter-form" class="row" style="align-items:center;">
+				<select class="select" name="category">
+					<option value="">Todas las categorías</option>
+					<option value="Comida">Comida</option>
+					<option value="Transporte">Transporte</option>
+					<option value="Salud">Salud</option>
+					<option value="Entretenimiento">Entretenimiento</option>
+					<option value="Salario">Salario</option>
+					<option value="Otros">Otros</option>
+				</select>
+				<select class="select" name="type">
+					<option value="">Todos los tipos</option>
+					<option value="income">Ingreso</option>
+					<option value="expense">Gasto</option>
+				</select>
+				<input class="input" type="date" name="dateFrom" />
+				<input class="input" type="date" name="dateTo" />
+				<select class="select" name="orderBy">
+					<option value="date_desc">Fecha (desc)</option>
+					<option value="date_asc">Fecha (asc)</option>
+					<option value="amount_desc">Monto (desc)</option>
+					<option value="amount_asc">Monto (asc)</option>
+				</select>
+				<div class="inline">
+					<button class="btn" type="submit">Aplicar</button>
+					<button class="btn ghost" id="clear-filters">Limpiar</button>
+				</div>
+			</form>
+		</div>
+
+		<div id="transactions-list" style="margin-top:12px"></div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/storage.js"></script>
+	<script src="assets/js/auth.js"></script>
+	<script src="assets/js/transactions.js"></script>
+	<script src="assets/js/ui.js"></script>
+</body>
+</html>

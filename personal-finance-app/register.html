@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Personal Finance — Registro</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="brand">
+				<div class="logo">PF</div>
+				<div>
+					<h2>Crear cuenta</h2>
+					<div class="muted small">Empieza a administrar tus finanzas</div>
+				</div>
+			</div>
+			<div class="row">
+				<a class="btn ghost" href="index.html">Volver</a>
+			</div>
+		</div>
+
+		<div class="card" style="max-width:520px;margin:auto">
+			<form id="register-form" class="form">
+				<input class="input" name="name" placeholder="Nombre completo" required />
+				<input class="input" name="email" type="email" placeholder="Correo electrónico" required />
+				<input class="input" name="password" type="password" placeholder="Contraseña" required />
+				<div class="row">
+					<button class="btn" type="submit">Crear cuenta</button>
+					<a class="btn ghost" href="index.html">Ya tengo cuenta</a>
+				</div>
+			</form>
+			<div class="muted small" style="margin-top:10px">Se guardará localmente en tu navegador.</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/storage.js"></script>
+	<script src="assets/js/auth.js"></script>
+	<script src="assets/js/ui.js"></script>
+</body>
+</html>

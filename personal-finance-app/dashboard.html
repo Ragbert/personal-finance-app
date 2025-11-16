@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Personal Finance — Dashboard</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<!-- Chart.js CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<body data-protected="true">
+	<div class="container">
+		<div class="header">
+			<div class="brand">
+				<div class="logo">PF</div>
+				<div>
+					<h2>Dashboard</h2>
+					<div class="muted small">Resumen de tus finanzas</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small muted">Usuario: <span id="current-user-email"></span></div>
+				<button id="theme-toggle" class="btn ghost small">Tema</button>
+				<a class="btn" href="add-transaction.html">+ Nueva</a>
+				<a class="btn ghost" id="logout-btn" href="#">Cerrar sesión</a>
+			</div>
+		</div>
+
+		<div id="dashboard-root">
+			<div class="metrics">
+				<div class="card metric">
+					<div class="muted small">Ingresos</div>
+					<div id="total-income" style="font-size:20px;font-weight:700">+ 0.00</div>
+				</div>
+				<div class="card metric">
+					<div class="muted small">Gastos</div>
+					<div id="total-expense" style="font-size:20px;font-weight:700">- 0.00</div>
+				</div>
+				<div class="card metric">
+					<div class="muted small">Balance</div>
+					<div id="balance" style="font-size:20px;font-weight:700">0.00</div>
+				</div>
+				<div class="card metric">
+					<div class="muted small">Acciones</div>
+					<div class="row" style="margin-top:8px">
+						<button id="export-data" class="btn small">Exportar</button>
+						<label class="btn ghost small" style="cursor:pointer">
+							Importar
+							<input id="import-data" type="file" accept="application/json" style="display:none" />
+						</label>
+						<button id="delete-account" class="btn ghost small">Eliminar cuenta</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" style="gap:18px; align-items:flex-start;">
+				<div style="flex:1;">
+					<div class="card">
+						<h4>Últimas transacciones</h4>
+						<div id="recent-list" style="margin-top:8px"></div>
+						<div style="margin-top:8px" class="muted"><a href="transactions.html">Ver todas</a></div>
+					</div>
+				</div>
+
+				<div style="flex:1;">
+					<div class="card" style="margin-bottom:12px">
+						<h4>Gastos por mes</h4>
+						<canvas id="chart-bar" style="width:100%;height:220px"></canvas>
+					</div>
+					<div class="card" style="margin-bottom:12px">
+						<h4>Gastos por categoría</h4>
+						<canvas id="chart-pie" style="width:100%;height:200px"></canvas>
+					</div>
+					<div class="card">
+						<h4>Evolución balance</h4>
+						<canvas id="chart-line" style="width:100%;height:160px"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/storage.js"></script>
+	<script src="assets/js/auth.js"></script>
+	<script src="assets/js/ui.js"></script>
+	<script src="assets/js/charts.js"></script>
+	<script src="assets/js/dashboard.js"></script>
+</body>
+</html>
